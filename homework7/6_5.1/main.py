@@ -1,16 +1,16 @@
-# This is a sample Python script.
+import numpy as np
+import matplotlib.pyplot as plt
+from pylab import *
+from mpl_toolkits.mplot3d import Axes3D
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+y = np.linspace(-5, 5, 50)
+z = np.linspace(-5, 5, 50)
+x1 = 1 - 2*y + z
+x3 = (5*y + 12 - 2*z)/8
 
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.plot(x1, y, z, label='parametric curve')
+ax.plot(x3, y, z, label='parametric curve')
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+show()
